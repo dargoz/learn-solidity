@@ -1,0 +1,19 @@
+{
+  "name": "learn-solidity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "export-abis": "ts-node script/export-abis.ts",
+    "build": "pnpm run export-abis && forge build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.3",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "@types/node": "^20.5.4"
+  }
+}
