@@ -72,3 +72,22 @@ forge fmt        # format solidity code
 anvil            # run local node
 cast <subcommand>
 ```
+
+## Deploy Smart Contract
+command:
+```sh
+forge script <DeployFileScript> --broadcast --slow
+```
+example:
+```sh
+forge script Counter --broadcast --slow
+```
+
+## Verify Deployed smart Contract:
+```sh
+forge verify-contract \
+  --chain-id 11155111 \ # Sepolia Chain ID
+  <DEPLOYED_CONTRACT_ADDRESS> \
+  src/YourContract.sol:YourContract \
+  $ETHERSCAN_API_KEY
+```
