@@ -6,11 +6,21 @@ import {Counter} from "../src/Counter.sol";
 
 contract CounterScript is Script {
     Counter public counter;
+    address public owner;
+    uint256 public deployerKey;
+    string public rpcUrl;
 
     function setUp() public {}
 
     function run() public {
-        vm.startBroadcast();
+
+        deployerKey = vm.envUint("DEPLOYER_PRIVATE_KEY"); // your wallet private key
+        owner = vm.addr(deployerKey);
+
+        rpcUrl = vm.envString("RPC_URL"); // your rpc url, ex: Infura/Alchemy
+        vm.createSelectFork(rpcUrl);
+
+        vm.startBroadcast(deployerKey);
 
         counter = new Counter();
 

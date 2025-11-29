@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 /** Add your contract names here (no `.sol` extension) */
-const contracts = ["PBALend"]; // e.g. ["PBALend", "PBAToken", "PBAMarket"]
+const contracts = ["Counter"]; // e.g. ["PBALend", "PBAToken", "PBAMarket"]
 
 /** Convert PascalCase or camelCase -> CAPITAL_SNAKE_CASE */
 function toCapitalSnakeCase(name: string): string {
